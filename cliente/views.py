@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from .models import Clientes
 # Create your views here.
 
 def index(request):
@@ -7,3 +7,7 @@ def index(request):
 
 def cadastro(request):
     return render(request, 'cadastro.html')
+
+def listar(request):
+    lista_clientes = Clientes.objects.all()
+    return render(request, 'listar.html', {'lista': lista_clientes})
