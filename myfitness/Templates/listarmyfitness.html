@@ -24,10 +24,10 @@
                         <td>{{ myfitness.created_at }}</td>
                         <td>{{ myfitness.updated_at }}</td>
                         <td>
-                            <a href="{% url 'deletar_cliente' cliente.id %}">
+                            <a href="{% url 'deletar_myfitness' myfitness.id %}">
                                 Excluir
                             </a>
-                            <a href="{% url 'editar_cliente' cliente.id %}">
+                            <a href="{% url 'editar_myfitness' myfitness.id %}">
                                 Editar
                             </a>
                         </td>
@@ -36,7 +36,7 @@
             {% else %}
                 <tr>
                     <td class="text-center" colspan="6">
-                        Nenhum cliente cadastrado
+                        Nenhum myfitness cadastrado
                     </td>
                 </tr>
             {% endif %}
