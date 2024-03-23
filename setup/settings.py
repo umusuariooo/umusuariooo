@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cliente',
+    'estoque',
+    'usuario',
+    'myfitness',
     'bootstrap5'
 ]
 
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'cliente/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'myfitness/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

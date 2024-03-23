@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tito's Stock</title> 
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
 <body>
-    <h1>Titos's Stock</h1>
+    <h1>Tito's Stock</h1>
     <p>Sistema de Gerenciamento de Estoque</p>
-    <a href="{% url 'index' %}">Home</a>
-    <a href="{% url 'cadastro' %}">Cadsastre-se</a>
-    <a href="{% url 'listar' %}">Lista de Clientes</a>
 
+    <h4>Estoque</h4>
+
+    <a href="{% url 'index_estoque' %}">Listar</a>
+    <a href="{% url 'cadastro_estoque' %}">Cadastrar</a>
 
     {% block content %}
     {% endblock %}

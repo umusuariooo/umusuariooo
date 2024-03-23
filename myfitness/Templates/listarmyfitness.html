@@ -1,0 +1,45 @@
+{% extends "mastermyfitness.html" %}
+
+{% block content %}
+    <h4>Lista de myfitness</h4>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome Completo</th>
+                <th>E-mail</th>
+                <th>Situação</th>
+                <th>Data de Cadastro</th>
+                <th>Data de Atualização</th>
+                <th>Gerenciar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if lista %}
+                {% for cliente in lista %}
+                    <tr>
+                        <td>{{ myfitness.primeiro_nome }} {{ myfitness.sobrenome }}</td>
+                        <td>{{ myfitness.email }}</td>
+                        <td>{{ myfitness.status }}</td>
+                        <td>{{ myfitness.created_at }}</td>
+                        <td>{{ myfitness.updated_at }}</td>
+                        <td>
+                            <a href="{% url 'deletar_cliente' cliente.id %}">
+                                Excluir
+                            </a>
+                            <a href="{% url 'editar_cliente' cliente.id %}">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td class="text-center" colspan="6">
+                        Nenhum cliente cadastrado
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock  %}
